@@ -1,0 +1,14 @@
+  version : '2'
+
+  services:
+    docker-test:
+      build: .
+      command: npm run start
+      ports:
+        - '8888:8080'
+      volumes:
+        - .:/usr/src/app
+        - docker-test-vol:/usr/src/app/node_modules
+
+  volumes:
+    docker-test-vol:
